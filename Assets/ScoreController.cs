@@ -17,7 +17,6 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {    
-        this.scoreText.GetComponent<Text>().text = "Score "+score.ToString();
 
     }
 
@@ -28,20 +27,21 @@ public class ScoreController : MonoBehaviour
            score += 100;
         }
 
-        else if(other.gameObject.tag=="LargeStarTag")
+        if(other.gameObject.tag=="LargeStarTag")
         {
             score += 250;
         }
 
-        else if(other.gameObject.tag=="SmallCloudTag")
+        if(other.gameObject.tag=="SmallCloudTag")
         {
            score += 200;
         }
 
-        else if(other.gameObject.tag=="LargeCloudTag")
+        if(other.gameObject.tag=="LargeCloudTag")
         {
             score += 300;
         }
+        this.scoreText.GetComponent<Text>().text = "Score "+score.ToString();
 
     }
 }
